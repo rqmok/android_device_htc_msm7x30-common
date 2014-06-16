@@ -8,6 +8,7 @@ public class Startup extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
+        DynFsync.restore(context);
         FastCharge.restore(context);
         SoftFlash.restore(context);
         Sweep2Wake.restore(context);

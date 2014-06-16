@@ -30,6 +30,7 @@ import com.cyanogenmod.settings.device.R;
 public class DevicePreferenceActivity extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
+    public static final String KEY_DYN_FSYNC = "dyn_fsync";
     public static final String KEY_FAST_CHARGE = "fast_charge";
     public static final String KEY_SOFT_FLASH = "soft_flash";
     public static final String KEY_SWEEP2WAKE = "sweep2wake";
@@ -41,6 +42,7 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
     public static final String KEY_MAX_DURATION = "dt2w_max_duration";
 
     private Context context;
+    private CheckBoxPreference mDynFsync;
     private CheckBoxPreference mFastCharge;
     private CheckBoxPreference mSoftFlash;
     private SwitchPreference mSweep2Wake;
@@ -57,6 +59,10 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
 
         addPreferencesFromResource(R.xml.preferences);
         context = getActivity().getApplication();
+
+        mDynFsync = (CheckBoxPreference) findPreference(KEY_DYN_FSYNC);
+        mDynFsync.setChecked(DynFsync.isEnabled());
+        mDynFsync.setEnabled(DynFsync.isSupported());
 
         mFastCharge = (CheckBoxPreference) findPreference(KEY_FAST_CHARGE);
         mFastCharge.setChecked(FastCharge.isEnabled());
@@ -99,7 +105,13 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mFastCharge) {
+        if (preference == mDynFsync) {
+            if (mDynFsync.isChecked())
+                DynFsync.enable(context);
+            else
+                DynFsync.disable(context);
+            return true;
+        } else if (preference == mFastCharge) {
             if (mFastCharge.isChecked())
                 FastCharge.enable(context);
             else
