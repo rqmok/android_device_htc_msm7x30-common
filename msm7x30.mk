@@ -103,6 +103,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Torch
 
+# Live wallpapers
+PRODUCT_PACKAGES += \
+    Galaxy4 \
+    HoloSpiralWallpaper \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
+    VisualizationWallpapers \
+    PhotoTable \
+    PhotoPhase
+
 # DeviceSettings
 PRODUCT_PACKAGES += \
 	DeviceSettings
