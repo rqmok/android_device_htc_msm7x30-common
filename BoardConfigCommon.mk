@@ -56,7 +56,7 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := legacy
-BOARD_EGL_CFG := vendor/qcom/proprietary/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := vendor/htc/ace/proprietary/lib/egl/egl.cfg
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_USES_ION := true
 BOARD_USES_PMEM_ADSP := true
