@@ -120,10 +120,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	DeviceSettings
 
-# Proximity Recalibrator
-PRODUCT_PACKAGES += \
-	ProximityRecalibrator
-
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
