@@ -105,16 +105,8 @@ PRODUCT_PACKAGES += \
 
 # Live wallpapers
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    PhotoTable \
-    PhotoPhase
+    PhaseBeam
 
 # DeviceSettings
 PRODUCT_PACKAGES += \

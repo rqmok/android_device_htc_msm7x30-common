@@ -28,7 +28,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := scorpion
+TARGET_CPU_VARIANT := cortex-a8
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
@@ -99,7 +99,6 @@ BOARD_SEPOLICY_UNION += \
     domain.te \
     drmserver.te \
     file_contexts \
-    files \
     file.te \
     hci_init.te \
     healthd.te \
@@ -110,7 +109,7 @@ BOARD_SEPOLICY_UNION += \
     mediaserver.te \
     rild.te \
     surfaceflinger.te \
-    system.te \
+    system_server.te \
     ueventd.te \
     untrusted_app.te \
     vold.te \
