@@ -110,5 +110,4 @@ BOARD_SEPOLICY_UNION += \
     ueventd.te \
     untrusted_app.te \
     vold.te \
-    wpa.te \
-    wpa_socket.te
+    wpa.te
