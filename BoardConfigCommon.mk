@@ -17,6 +17,8 @@
 
 BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
+TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
