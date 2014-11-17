@@ -85,6 +85,9 @@ WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 BOARD_LEGACY_NL80211_STA_EVENTS := true
 
+# rmt_storage
+BOARD_USES_LEGACY_MMAP := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/htc/msm7x30-common/sepolicy
