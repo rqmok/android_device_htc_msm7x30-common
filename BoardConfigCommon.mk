@@ -54,6 +54,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Don't generate block mode update zips
 BLOCK_BASED_OTA := false
 
+# Radio
+TARGET_NEEDS_NON_PIE_SUPPORT := true
+
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
