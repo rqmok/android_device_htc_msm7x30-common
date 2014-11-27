@@ -55,6 +55,9 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
+
 PRODUCT_PACKAGES += \
     camera.msm7x30
 
