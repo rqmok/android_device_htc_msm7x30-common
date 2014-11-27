@@ -133,6 +133,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
+# Awesome Player as default
+PRODUCT_PROPERTY_OVERRIDES += \
+	media.stagefright.use-awesome=true
+
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
 	com.qc.hardware=true \
