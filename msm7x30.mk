@@ -72,6 +72,9 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler \
 	libaudioparameter
 
+# GPS
+PRODUCT_PACKAGES += librpc
+
 # Video
 PRODUCT_PACKAGES += \
 	copybit.msm7x30 \
