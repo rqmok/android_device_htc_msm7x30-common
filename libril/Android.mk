@@ -1,6 +1,7 @@
 # Copyright 2006 The Android Open Source Project
 
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
+ifeq ($(TARGET_BOARD_PLATFORM),msm7x30)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
@@ -47,4 +48,5 @@ LOCAL_MODULE:= libril_static
 
 include $(BUILD_STATIC_LIBRARY)
 endif # ANDROID_BIONIC_TRANSITION
+endif # TARGET_BOARD_PLATFORM
 endif # BOARD_PROVIDES_LIBRIL
