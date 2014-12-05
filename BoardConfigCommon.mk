@@ -54,6 +54,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BLOCK_BASED_OTA := false
 
 # Radio
+BOARD_PROVIDES_LIBRIL := true
 TARGET_NEEDS_NON_PIE_SUPPORT := true
 
 # Boot Animation
