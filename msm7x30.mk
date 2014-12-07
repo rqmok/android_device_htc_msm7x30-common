@@ -102,6 +102,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += qcmediaplayer
 
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes
+
 # Misc
 PRODUCT_PACKAGES += com.android.future.usb.accessory
 
