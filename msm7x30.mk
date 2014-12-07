@@ -141,6 +141,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.media.use-awesome=true \
 	media.stagefright.use-awesome=true
 
+# Newer camera API isn't supported.
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
 	com.qc.hardware=true \
