@@ -91,7 +91,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += qcmediaplayer
 
-
 # Wifi
 PRODUCT_PACKAGES += \
 	libnetcmdiface \
@@ -99,6 +98,11 @@ PRODUCT_PACKAGES += \
 	hostapd \
 	wpa_supplicant \
 	wpa_supplicant.conf
+
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+	ebtables \
+	ethertypes
 
 # GPS
 PRODUCT_PACKAGES += librpc
