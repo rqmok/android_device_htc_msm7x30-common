@@ -148,13 +148,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
 	com.qc.hardware=true \
-	debug.composition.type=dyn \
+	debug.composition.type=gpu \
 	debug.sf.hw=1 \
 	debug.egl.hw=1 \
-	debug.egl.recordable.rgba8888=1 \
-	debug.mdpcomp.maxlayer=3 \
-	debug.mdpcomp.logs=0 \
-	persist.hwc.mdpcomp.enable=true
+	debug.egl.recordable.rgba8888=1
 
 # Low Power Audio
 PRODUCT_PROPERTY_OVERRIDES += \
