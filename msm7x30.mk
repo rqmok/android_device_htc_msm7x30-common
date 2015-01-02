@@ -152,6 +152,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.hw=1 \
 	debug.egl.hw=1 \
 	debug.egl.recordable.rgba8888=1 \
+	debug.mdpcomp.maxlayer=3 \
+	debug.mdpcomp.logs=0 \
 	persist.hwc.mdpcomp.enable=true
 
 # Low Power Audio
