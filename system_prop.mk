@@ -47,6 +47,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.hw=1 \
 	debug.egl.hw=1 \
 	debug.egl.recordable.rgba8888=1
+	
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.media.use-awesome=true \
@@ -83,6 +84,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.locale.region=US \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1
-
-
-
