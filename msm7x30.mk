@@ -17,6 +17,9 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 COMMON_PATH := device/htc/msm7x30-common
 
+# System Properties
+-include $(COMMON_PATH)/system_prop.mk
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -122,63 +125,3 @@ PRODUCT_PACKAGES += \
 
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.supplicant_scan_interval=15 \
-	ro.com.google.locationfeatures=1 \
-	ro.product.locale.language=en \
-	ro.product.locale.region=US \
-	ro.use_data_netmgrd=true \
-	ro.tethering.kb_disconnect=1
-
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number.
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=131072
-
-# Awesome Player as default
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.media.use-awesome=true \
-	media.stagefright.use-awesome=true
-
-# Newer camera API isn't supported.
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-	com.qc.hardware=true \
-	debug.composition.type=gpu \
-	debug.sf.hw=1 \
-	debug.egl.hw=1 \
-	debug.egl.recordable.rgba8888=1
-
-# Low Power Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	lpa.decode=false \
-	lpa.use-stagefright=false
-
-# Resampler quality
-PRODUCT_PROPERTY_OVERRIDES += \
-	af.resampler.quality=255
-
-# set default USB configuration
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
-
-# Extra debugging props
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.strictmode.visual=0 \
-	persist.sys.strictmode.disable=1
-
-# Reduce background apps limit to 16 on low-tier devices
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=16
-
-# Set max background services
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.max_starting_bg=8
-
-# Disable atlas services on low-ram targets
-PRODUCT_PROPERTY_OVERRIDES += \
-	config.disable_atlas=true
