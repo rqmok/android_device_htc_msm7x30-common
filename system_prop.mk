@@ -48,7 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.hw=1 \
 	debug.egl.hw=1 \
 	debug.egl.recordable.rgba8888=1
-	
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.media.use-awesome=true \
@@ -71,10 +71,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Memory
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=16 \
-    ro.config.max_starting_bg=8 \
-    config.disable_atlas=true \
-    ro.ksm.default=1
+	ro.sys.fw.bg_apps_limit=16 \
+	ro.config.max_starting_bg=8 \
+	config.disable_atlas=true \
+	ro.ksm.default=1
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
