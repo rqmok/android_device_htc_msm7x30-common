@@ -5,7 +5,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=240 \
 	persist.sys.strictmode.visual=0 \
-	ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000 \
+	ro.gsm.2nd_data_retry_config=max_retries=3,2000,2000,2000 \
 	com.qc.hardware=true
 
 # RIL
