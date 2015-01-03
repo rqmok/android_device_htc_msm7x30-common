@@ -26,7 +26,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ril.hsdpa.category=10 \
 	ro.ril.hsupa.category=6 \
 	ro.ril.hsxpa=2 \
-	ro.ril.def.agps.mode=2
+	ro.ril.def.agps.mode=2 \
+	ro.ril.disable.power.collapse=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
