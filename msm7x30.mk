@@ -59,11 +59,9 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera
+PRODUCT_PACKAGES += camera.msm7x30
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
-
-PRODUCT_PACKAGES += \
-    camera.msm7x30
 
 # adb hack
 PRODUCT_COPY_FILES += \
@@ -111,20 +109,16 @@ PRODUCT_PACKAGES += \
 	libstagefrighthw
 
 # Misc
-PRODUCT_PACKAGES += \
-	com.android.future.usb.accessory \
-	setup_fs
+PRODUCT_PACKAGES += com.android.future.usb.accessory
 
 # Torch
-PRODUCT_PACKAGES += \
-	Torch
+PRODUCT_PACKAGES += Torch
 
 # Live wallpapers
 PRODUCT_PACKAGES += LiveWallpapersPicker
 
 # DeviceSettings
-PRODUCT_PACKAGES += \
-	DeviceSettings
+PRODUCT_PACKAGES += DeviceSettings
 
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
