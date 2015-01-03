@@ -78,6 +78,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += librpc
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf
 
 # Video
 PRODUCT_PACKAGES += \
