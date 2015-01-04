@@ -93,6 +93,9 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant \
 	wpa_supplicant.conf
 
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/rootdir/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
 # HAL
 PRODUCT_PACKAGES += \
 	power.msm7x30 \
