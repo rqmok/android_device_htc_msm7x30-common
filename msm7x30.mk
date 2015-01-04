@@ -36,7 +36,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 PRODUCT_COPY_FILES += \
-	device/htc/msm7x30-common/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
+	$(COMMON_PATH)/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
 
 # Common 7x30 firmware
 PRODUCT_COPY_FILES += \
