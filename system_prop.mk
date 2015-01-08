@@ -4,7 +4,6 @@
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=240 \
-	persist.sys.strictmode.visual=0 \
 	ro.gsm.2nd_data_retry_config=max_retries=3,2000,2000,2000 \
 	com.qc.hardware=true
 
@@ -79,6 +78,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.clientidbase=android-htc-rev \
 	ro.com.google.locationfeatures=1 \
 	ro.product.locale.language=en \
-	ro.product.locale.region=US \
+	ro.product.locale.region=US
+
+# Disable strict mode
+PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1
