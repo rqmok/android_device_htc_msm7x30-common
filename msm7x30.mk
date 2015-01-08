@@ -20,6 +20,8 @@ COMMON_PATH := device/htc/msm7x30-common
 # System Properties
 -include $(COMMON_PATH)/system_prop.mk
 
+PRODUCT_BOOT_JARS += qcmediaplayer
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -108,6 +110,8 @@ PRODUCT_PACKAGES += \
 	libc2dcolorconvert \
 	libdashplayer \
 	libstagefrighthw
+
+PRODUCT_PACKAGES += qcmediaplayer
 
 # Misc
 PRODUCT_PACKAGES += com.android.future.usb.accessory
