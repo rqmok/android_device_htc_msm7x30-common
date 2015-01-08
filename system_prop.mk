@@ -57,7 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	lpa.decode=false \
 	lpa.use-stagefright=false \
-	af.resampler.quality=255
+	af.resampler.quality=4
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
