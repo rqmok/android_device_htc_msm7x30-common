@@ -17,6 +17,8 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 COMMON_PATH := device/htc/msm7x30-common
 
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # System Properties
