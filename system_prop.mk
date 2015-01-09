@@ -54,8 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-	lpa.decode=false \
-	af.resampler.quality=4
+	lpa.decode=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
