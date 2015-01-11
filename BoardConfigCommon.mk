@@ -85,6 +85,11 @@ BOARD_USES_LEGACY_RIL := true
 TARGET_PROVIDES_LIBLIGHT := true
 EXTENDED_FONT_FOOTPRINT := true
 
+# Use dlmalloc instead of jemalloc because it's
+# supposedly better in single-threaded applications
+# http://blog.poweredbytoast.com/memory-allocators
+MALLOC_IMPL := dlmalloc
+
 # Wifi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WLAN_DEVICE := bcmdhd
