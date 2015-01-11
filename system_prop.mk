@@ -54,7 +54,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-	lpa.decode=false
+	lpa.decode=false \
+	use.non-omx.aac.decoder=false \
+	use.non-omx.mp3.decoder=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
