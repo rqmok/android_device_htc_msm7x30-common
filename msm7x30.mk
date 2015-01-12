@@ -68,10 +68,6 @@ PRODUCT_PACKAGES += camera.msm7x30
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
-# adb hack
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/system/etc/init.d/20fixup:system/etc/init.d/20fixup
-
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
