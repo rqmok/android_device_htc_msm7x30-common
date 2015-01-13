@@ -43,16 +43,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
 
-# Common 7x30 firmware
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-	$(COMMON_PATH)/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw
-
 # media configs
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -65,8 +55,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += camera.msm7x30
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -83,6 +71,9 @@ PRODUCT_PACKAGES += \
 	copybit.msm7x30 \
 	gralloc.msm7x30 \
 	hwcomposer.msm7x30
+
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/rootdir/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -124,3 +115,6 @@ PRODUCT_PACKAGES += DeviceSettings
 
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+# proprietary blobs for msm7x30
+$(call inherit-product, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)
