@@ -1,0 +1,2 @@
+import init.target.rc
+import init.htc7x30.usb.rc

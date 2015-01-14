@@ -26,6 +26,14 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_BOOT_JARS += qcmediaplayer
 
+# Ramdisk files
+PRODUCT_PACKAGES += \
+	fstab.htc7x30 \
+	init.htc7x30.rc \
+	init.htc7x30.usb.rc \
+	ueventd.htc7x30.rc
+
+# Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -39,9 +47,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
-
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
 
 # media configs
 PRODUCT_COPY_FILES += \
