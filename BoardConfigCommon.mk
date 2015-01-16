@@ -15,6 +15,9 @@
 # inherit from common msm7x30 Recovery
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
 
+# SELinux
+-include device/qcom/common/sepolicy.mk
+
 BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
