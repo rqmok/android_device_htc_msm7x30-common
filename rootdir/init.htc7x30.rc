@@ -23,10 +23,6 @@ on fs
     mount_all /fstab.htc7x30
 #    swapon_all /fstab.htc7x30
 
-on post-fs
-    chmod 0771 /cache
-    chown system cache /cache
-
 on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
