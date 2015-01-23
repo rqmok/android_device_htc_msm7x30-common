@@ -16,7 +16,7 @@
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
 
 # SELinux
--include device/qcom/common/sepolicy.mk
+-include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
