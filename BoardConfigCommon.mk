@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common msm7x30 Recovery
--include device/htc/7x30-recovery/BoardConfigCommon.mk
-
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
@@ -22,15 +19,8 @@ BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
 
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
 # General
 TARGET_BOARD_PLATFORM := msm7x30
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
@@ -42,28 +32,24 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 BOARD_USES_QCOM_HARDWARE := true
 
+# No bootloader image with ROM
+TARGET_NO_BOOTLOADER := true
+
+# Build EXT4 and F2FS tools
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
 # Audio
 BOARD_HAVE_HTC_AUDIO := true
-BOARD_HAVE_PRE_KITKAT_AUDIO_POLICY_BLOB := true
+BOARD_HAVE_PRE_KITKAT_AUDIO_POLICY_BLOB := true # Check later
 BOARD_USES_LEGACY_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_INCALL_MUSIC := false
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
-#BOARD_HAVE_QCOM_FM := true
-#BOARD_USES_QCOM_AUDIO_LPA := true
-#BOARD_USES_QCOM_AUDIO_RESETALL := true
-#BOARD_USES_QCOM_AUDIO_SPEECH := true
-#BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := false
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-
-# Don't generate block mode update zips
-BLOCK_BASED_OTA := false
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
-TARGET_NEEDS_NON_PIE_SUPPORT := true
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -77,7 +63,6 @@ TARGET_USES_ION := true
 BOARD_USES_PMEM_ADSP := true
 TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
-TARGET_NO_ADAPTIVE_PLAYBACK := true
 
 # GPS
 BOARD_USES_QCOM_GPS := true
@@ -86,17 +71,17 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 TARGET_GPS_HAL_PATH := device/htc/msm7x30-common/gps
 
 # Media
-TARGET_QCOM_LEGACY_OMX := true
-BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Misc
 BOARD_NEEDS_MEMORYHEAPPMEM := true
-BOARD_USES_LEGACY_RIL := true
 TARGET_PROVIDES_LIBLIGHT := true
 EXTENDED_FONT_FOOTPRINT := true
+BLOCK_BASED_OTA := false
+TARGET_NEEDS_NON_PIE_SUPPORT := true
+BOARD_PROVIDES_LIBRIL := true
 
 # Use dlmalloc instead of jemalloc because it's
 # supposedly better in single-threaded applications
@@ -112,9 +97,7 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
-BOARD_LEGACY_NL80211_STA_EVENTS := true
 
 # rmt_storage
 BOARD_USES_LEGACY_MMAP := true
@@ -145,3 +128,13 @@ BOARD_USES_LEGACY_MMAP := true
 #    untrusted_app.te \
 #    vold.te \
 #    wpa.te
+
+# Dexpreopt
+ifeq ($(USE_DEXPREOPT),true)
+    # Enable dex-preoptimization to speed up first boot sequence
+    ifeq ($(HOST_OS),linux)
+        ifeq ($(WITH_DEXPREOPT),)
+            WITH_DEXPREOPT := true
+        endif
+    endif
+endif
