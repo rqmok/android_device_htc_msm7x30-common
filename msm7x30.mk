@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libsurfaceflinger_client
 
+# Torch
+PRODUCT_PACKAGES += \
+	Torch
+
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
