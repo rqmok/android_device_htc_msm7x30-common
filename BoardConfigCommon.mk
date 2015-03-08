@@ -1,5 +1,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
 
+BOARD_VENDOR := htc
+
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
