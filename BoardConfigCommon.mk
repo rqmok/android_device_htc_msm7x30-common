@@ -113,6 +113,9 @@ BOARD_USES_LEGACY_MMAP := true
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x30
 
+# CM Hardware tunables
+BOARD_HARDWARE_CLASS := device/semc/msm7x30-common/cmhw
+
 # Dexpreopt
 ifeq ($(USE_DEXPREOPT),true)
     # Enable dex-preoptimization to speed up first boot sequence
