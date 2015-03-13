@@ -58,10 +58,11 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
-	audio.usb.default \
 	audio.primary.msm7x30 \
 	audio_policy.msm7x30 \
-	libaudioutils
+	libaudio-resampler \
+	libaudioparameter
+
 
 # Video
 PRODUCT_PACKAGES += \
@@ -73,12 +74,12 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-	libstagefrighthw \
 	libOmxCore \
-	libdivxdrmdecrypt \
 	libOmxVdec \
 	libOmxVenc \
-	libc2dcolorconvert
+	libc2dcolorconvert \
+	libstagefrighthw
+
 
 # GPS
 PRODUCT_PACKAGES += librpc
@@ -97,59 +98,46 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Torch
 
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
-
-
-# Misc. property overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.setupwizard.enable_bypass=1 \
-	ro.com.google.locationfeatures=1 \
-	ro.com.google.networklocation=1 \
-	ro.com.google.gmsversion=4.0_r1 \
-	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.dexopt-flags=m=y \
-	dalvik.vm.heapstartsize=5m \
-	dalvik.vm.heapgrowthlimit=36m \
-	dalvik.vm.heapsize=128m \
-	dalvik.vm.heaptargetutilization=0.25 \
-	dalvik.vm.heapminfree=512k \
-	dalvik.vm.heapmaxfree=2m \
-	dalvik.vm.debug.alloc=0 \
-	ro.config.low_ram=true \
-	ro.sf.lcd_density=240 \
-	ro.vold.umsdirtyratio=20 \
-	ro.sys.fw.bg_apps_limit=12 \
-	ro.config.max_starting_bg=6 \
-	ro.zygote.disable_gl_preload=true \
-	debug.sf.hw=1 \
-	debug.egl.hw=1 \
-	video.accelerate.hw=1 \
-	debug.egl.recordable.rgba8888=1 \
-	debug.sf.no_hw_vsync=1 \
-	debug.mdpcomp.logs=0 \
-	dev.pm.dyn_samplingrate=1 \
-	ro.opengles.version=131072 \
-	com.qc.hardware=true \
-	debug.composition.type=gpu \
-	persist.sys.usb.config=mass_storage,adb \
-	persist.service.adb.enable=1 \
-	persist.service.debuggable=1 \
-	persist.sys.strictmode.visual=0 \
-	persist.sys.strictmode.disable=1 \
-	media.a1026.nsForVoiceRec=0 \
-	media.a1026.enableA1026=0 \
-	htc.audio.alt.enable=0 \
-	htc.audio.hac.enable=1
-
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Call dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number.
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.opengles.version=131072
+
+# QCOM
+PRODUCT_PROPERTY_OVERRIDES += \
+	com.qc.hardware=true \
+	debug.composition.type=gpu \
+	debug.sf.hw=1 \
+	debug.egl.hw=1 \
+	debug.egl.recordable.rgba8888=1
+
+# Low Power Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	lpa.decode=false \
+	lpa.use-stagefright=false
+
+# Resampler quality
+PRODUCT_PROPERTY_OVERRIDES += \
+	af.resampler.quality=255
+
+# Extra debugging props
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.strictmode.visual=0 \
+	persist.sys.strictmode.disable=1
+
+# For applications to determine if they should turn off specific memory-intensive
+# features that work poorly on low-memory devices.
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.low_ram=true
+
+# Reduce background apps limit to 16 on low-tier devices
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bg_apps_limit=16
+
+# Set max background services
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.max_starting_bg=6
