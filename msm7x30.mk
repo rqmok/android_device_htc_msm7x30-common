@@ -131,13 +131,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # For applications to determine if they should turn off specific memory-intensive
 # features that work poorly on low-memory devices.
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.config.low_ram=true
+#PRODUCT_PROPERTY_OVERRIDES += \
+#	ro.config.low_ram=true
 
 # Reduce background apps limit to 16 on low-tier devices
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=16
+    ro.sys.fw.bg_apps_limit=14
 
 # Set max background services
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.max_starting_bg=6
+    ro.config.max_starting_bg=5
