@@ -58,10 +58,12 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
-	audio.primary.msm7x30 \
+	audio.usb.default \
 	audio_policy.msm7x30 \
+	audio.primary.msm7x30 \
 	libaudio-resampler \
 	libaudioparameter
+
 
 
 # Video
@@ -134,7 +136,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PROPERTY_OVERRIDES += \
 #	ro.config.low_ram=true
 
-# Reduce background apps limit to 16 on low-tier devices
+# Reduce background apps limit to 14 on low-tier devices
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.bg_apps_limit=14
 
