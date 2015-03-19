@@ -19,6 +19,9 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 BOARD_USES_QCOM_HARDWARE := true
 
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+
 
 # Audio
 TARGET_QCOM_AUDIO_VARIANT := caf
@@ -95,35 +98,8 @@ BOARD_USES_LEGACY_RIL := true
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
 
+# rmt_storage
+BOARD_USES_LEGACY_MMAP := true
 
 # Device Settings
 #BOARD_DEVICE_SETTINGS := device/htc/msm7x30-common/DeviceSettings
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/htc/msm7x30-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    files \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    untrusted_app.te \
-    vold.te \
-    wpa.te \
-    wpa_socket.te
