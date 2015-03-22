@@ -103,6 +103,9 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 # rmt_storage
 BOARD_USES_LEGACY_MMAP := true
 
+# Override healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x30
+
 # SELinux
 #BOARD_SEPOLICY_DIRS += \
 #    device/htc/msm7x30-common/sepolicy
