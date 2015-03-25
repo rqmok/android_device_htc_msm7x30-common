@@ -17,10 +17,23 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 COMMON_PATH := device/htc/msm7x30-common
 
-# Proprietary vendor tree
-$(call inherit-product, vendor/htc/msm7x30-common/msm7x30-vendor.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-# CM stuff
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+
+# System Properties
+-include $(COMMON_PATH)/system_prop.mk
+
+PRODUCT_BOOT_JARS += qcmediaplayer
+
+# Ramdisk files
+PRODUCT_PACKAGES += \
+	fstab.htc7x30 \
+	init.htc7x30.rc \
+	init.htc7x30.usb.rc \
+	ueventd.htc7x30.rc
+
+# Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -36,10 +49,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 
-# USB init file
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
-
 # Media config files
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -54,9 +63,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg
 
-# Common GPS config
-PRODUCT_COPY_FILES += \
-	device/common/gps/gps.conf_EU_SUPL:system/etc/gps.conf
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -66,7 +72,6 @@ PRODUCT_PACKAGES += \
 	audio.primary.msm7x30 \
 	libaudio-resampler \
 	libaudioparameter
-
 
 
 # Video
@@ -83,8 +88,10 @@ PRODUCT_PACKAGES += \
 	libOmxVdec \
 	libOmxVenc \
 	libc2dcolorconvert \
+	libdashplayer \
 	libstagefrighthw
 
+PRODUCT_PACKAGES += qcmediaplayer
 
 # GPS
 PRODUCT_PACKAGES += librpc
@@ -94,52 +101,24 @@ PRODUCT_PACKAGES += \
 	power.msm7x30
 
 # Misc
-PRODUCT_PACKAGES += \
-    libnetcmdiface \
-    com.android.future.usb.accessory \
-    libsurfaceflinger_client
+PRODUCT_PACKAGES += com.android.future.usb.accessory
 
 # Torch
-PRODUCT_PACKAGES += \
-	Torch
+PRODUCT_PACKAGES += Torch
+
+# Live wallpapers
+PRODUCT_PACKAGES += LiveWallpapersPicker
+
+# DeviceSettings
+PRODUCT_PACKAGES += DeviceSettings
 
 
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number.
+# Use ART small mode
+# http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=131072
+	dalvik.vm.dex2oat-filter=interpret-only \
+	dalvik.vm.image-dex2oat-filter=speed
 
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-	com.qc.hardware=true \
-	debug.composition.type=gpu \
-	debug.sf.hw=1 \
-	debug.egl.hw=1 \
-	debug.egl.recordable.rgba8888=1
 
-# Low Power Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	lpa.decode=false \
-	lpa.use-stagefright=false
-
-# Resampler quality
-PRODUCT_PROPERTY_OVERRIDES += \
-	af.resampler.quality=255
-
-# Extra debugging props
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.strictmode.visual=0 \
-	persist.sys.strictmode.disable=1
-
-# For applications to determine if they should turn off specific memory-intensive
-# features that work poorly on low-memory devices.
-#PRODUCT_PROPERTY_OVERRIDES += \
-#	ro.config.low_ram=true
-
-# Reduce background apps limit to 14 on low-tier devices
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=14
-
-# Set max background services
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.max_starting_bg=5
+# Proprietary vendor tree
+$(call inherit-product, vendor/htc/msm7x30-common/msm7x30-vendor.mk)
