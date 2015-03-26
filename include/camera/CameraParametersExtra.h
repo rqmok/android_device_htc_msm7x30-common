@@ -44,37 +44,7 @@ const char CameraParameters::KEY_MIN_CONTRAST[] = "contrast-min"; \
 const char CameraParameters::KEY_MIN_SATURATION[] = "saturation-min"; \
 const char CameraParameters::FILE_FORMAT_MPO[] = "mpo"; \
 const char CameraParameters::FILE_FORMAT_JPS[] = "jps"; \
-const char CameraParameters::FACE_DETECTION_OFF[] = "off"; \
-const char CameraParameters::FACE_DETECTION_ON[] = "on"; \
-const char CameraParameters::FOCUS_MODE_NORMAL[] = "normal"; \
-const char CameraParameters::ISO_100[] = "ISO100"; \
-const char CameraParameters::ISO_200[] = "ISO200"; \
-const char CameraParameters::ISO_400[] = "ISO400"; \
-const char CameraParameters::ISO_800[] = "ISO800"; \
-const char CameraParameters::ISO_AUTO[] = "auto"; \
-const char CameraParameters::KEY_CONTRAST[] = "contrast"; \
-const char CameraParameters::KEY_EXIF_DATETIME[] = "exif-datetime"; \
-const char CameraParameters::KEY_FACE_DETECTION[] = "face-detection"; \
-const char CameraParameters::KEY_GPS_ALTITUDE_REF[] = "gps-altitude-ref"; \
-const char CameraParameters::KEY_GPS_LATITUDE_REF[] = "gps-latitude-ref"; \
-const char CameraParameters::KEY_GPS_LONGITUDE_REF[] = "gps-longitude-ref"; \
-const char CameraParameters::KEY_ISO_MODE[] = "iso"; \
-const char CameraParameters::KEY_SATURATION[] = "saturation"; \
-const char CameraParameters::KEY_SCENE_DETECT[] = "scene-detect"; \
-const char CameraParameters::KEY_SHARPNESS[] = "sharpness"; \
-const char CameraParameters::KEY_SUPPORTED_ISO_MODES[] = "iso-values"; \
-const char CameraParameters::KEY_SUPPORTED_SCENE_DETECT[] = "scene-detect-values"; \
-const char CameraParameters::SCENE_DETECT_OFF[] = "off"; \
-const char CameraParameters::SCENE_DETECT_ON[] = "on"; \
-const char CameraParameters::SCENE_MODE_BACKLIGHT[] = "backlight"; \
-const char CameraParameters::SCENE_MODE_FLOWERS[] = "flowers"; \
-void CameraParameters::setPostviewSize(int width, int height) {} \
-void CameraParameters::setPreviewFpsRange(int minFPS, int maxFPS) \
-{ \
-    char str[32]; \
-    snprintf(str, sizeof(str), "%d,%d",minFPS,maxFPS); \
-    set(KEY_PREVIEW_FPS_RANGE,str); \
-}
+void CameraParameters::setPostviewSize(int width, int height) {}
 
 #define CAMERA_PARAMETERS_EXTRA_H \
        static const char KEY_CAPTURE_MODE[]; \
@@ -106,29 +76,5 @@ void CameraParameters::setPreviewFpsRange(int minFPS, int maxFPS) \
        static const char KEY_MIN_SATURATION[]; \
        static const char FILE_FORMAT_MPO[]; \
        static const char FILE_FORMAT_JPS[]; \
-       static const char FACE_DETECTION_OFF[]; \
-       static const char FACE_DETECTION_ON[]; \
-       static const char FOCUS_MODE_NORMAL[]; \
-       static const char ISO_100[]; \
-       static const char ISO_200[]; \
-       static const char ISO_400[]; \
-       static const char ISO_800[]; \
-       static const char ISO_AUTO[]; \
-       static const char KEY_CONTRAST[]; \
-       static const char KEY_EXIF_DATETIME[]; \
-       static const char KEY_FACE_DETECTION[]; \
-       static const char KEY_GPS_ALTITUDE_REF[]; \
-       static const char KEY_GPS_LATITUDE_REF[]; \
-       static const char KEY_GPS_LONGITUDE_REF[]; \
-       static const char KEY_ISO_MODE[]; \
-       static const char KEY_SATURATION[]; \
-       static const char KEY_SCENE_DETECT[]; \
-       static const char KEY_SHARPNESS[]; \
-       static const char KEY_SUPPORTED_ISO_MODES[]; \
-       static const char KEY_SUPPORTED_SCENE_DETECT[]; \
-       static const char SCENE_DETECT_OFF[]; \
-       static const char SCENE_DETECT_ON[]; \
-       static const char SCENE_MODE_BACKLIGHT[]; \
-       static const char SCENE_MODE_FLOWERS[]; \
-       void setPostviewSize(int x, int y); \
-       void setPreviewFpsRange(int minFPS,int maxFPS);
+       void setPostviewSize(int x, int y);
+
