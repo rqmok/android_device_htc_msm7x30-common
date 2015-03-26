@@ -99,8 +99,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 BLOCK_BASED_OTA := false
 
-BOARD_USE_NEW_LIBRIL_HTC := true
-BOARD_USES_LEGACY_RIL := true
+BOARD_PROVIDES_LIBRIL := true
 
 TARGET_NEEDS_NON_PIE_SUPPORT := true
 
@@ -110,12 +109,10 @@ EXTENDED_FONT_FOOTPRINT := true
 # Use dlmalloc instead of jemalloc because it's
 # supposedly better in single-threaded applications
 # http://blog.poweredbytoast.com/memory-allocators
-#MALLOC_IMPL := dlmalloc
+MALLOC_IMPL := dlmalloc
 
 # rmt_storage
 BOARD_USES_LEGACY_MMAP := true
-
-USE_DEXPREOPT := true
 
 # Dexpreopt
 ifeq ($(USE_DEXPREOPT),true)
