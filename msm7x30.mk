@@ -59,11 +59,6 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
-# Egl.cfg
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg
-
-
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
