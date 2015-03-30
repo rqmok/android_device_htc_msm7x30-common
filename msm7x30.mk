@@ -59,6 +59,9 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
+# Camera
+#PRODUCT_PACKAGES += camera.msm7x30
+
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
