@@ -15,6 +15,3 @@
 
 # zram
 /dev/block/zram0                                    none        swap    defaults        zramsize=134217728
-
-# swap partition
-/dev/block/platform/msm_sdcc.2/by-name/swap         none        swap    defaults        defaults
