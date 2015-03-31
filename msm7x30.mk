@@ -118,9 +118,6 @@ PRODUCT_PACKAGES += LiveWallpapersPicker
 # DeviceSettings
 PRODUCT_PACKAGES += DeviceSettings
 
-# We have enough space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Use ART small mode
 # http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
 PRODUCT_PROPERTY_OVERRIDES += \
