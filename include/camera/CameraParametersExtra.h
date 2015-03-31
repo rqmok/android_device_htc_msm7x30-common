@@ -132,3 +132,4 @@ void CameraParameters::setPreviewFpsRange(int minFPS, int maxFPS) \
        static const char SCENE_MODE_FLOWERS[]; \
        void setPostviewSize(int x, int y); \
        void setPreviewFpsRange(int minFPS,int maxFPS);
+
