@@ -91,6 +91,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += qcmediaplayer
 
+
+# Wifi
+PRODUCT_PACKAGES += \
+	libnetcmdiface \
+	dhcpcd.conf \
+	hostapd \
+	wpa_supplicant \
+	wpa_supplicant.conf
+
+
 # GPS
 PRODUCT_PACKAGES += librpc
 
@@ -105,7 +115,7 @@ PRODUCT_PACKAGES += com.android.future.usb.accessory
 PRODUCT_PACKAGES += LiveWallpapersPicker
 
 # DeviceSettings
-PRODUCT_PACKAGES += DeviceSettings
+#PRODUCT_PACKAGES += DeviceSettings
 
 
 # Use ART small mode
