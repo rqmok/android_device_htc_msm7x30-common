@@ -107,6 +107,9 @@ BOARD_USES_LEGACY_MMAP := true
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x30
 
+# Recovery
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/msm7x30-common
+
 # SELinux
 #BOARD_SEPOLICY_DIRS += \
 #    device/htc/msm7x30-common/sepolicy
