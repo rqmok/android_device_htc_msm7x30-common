@@ -124,6 +124,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-filter=interpret-only \
 	dalvik.vm.image-dex2oat-filter=speed
 
+# ODPUpdater
+PRODUCT_PACKAGES += ODPUpdater
+
 ifeq ($(TARGET_UNOFFICIAL_BUILD_ID),)
 PRODUCT_PROPERTY_OVERRIDES += ro.odp.releasetype=NIGHTLY
 else
