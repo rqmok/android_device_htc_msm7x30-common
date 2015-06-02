@@ -57,8 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # UMS
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.sys.usb.default.config=mtp \
-	persist.sys.usb.config=mtp
+	ro.sys.usb.default.config=mtp
 
 # Enable USB OTG interface
 PRODUCT_PROPERTY_OVERRIDES += \
