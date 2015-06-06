@@ -98,6 +98,7 @@ TARGET_NEEDS_NON_PIE_SUPPORT := true
 
 EXTENDED_FONT_FOOTPRINT := true
 
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
 
 # Use dlmalloc instead of jemalloc because it's
 # supposedly better in single-threaded applications
