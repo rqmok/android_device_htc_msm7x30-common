@@ -76,9 +76,6 @@ PRODUCT_PACKAGES += \
 	gralloc.msm7x30 \
 	hwcomposer.msm7x30
 
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg
-
 # Wifi
 PRODUCT_PACKAGES += \
 	libnetcmdiface \
