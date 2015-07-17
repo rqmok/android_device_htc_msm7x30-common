@@ -128,8 +128,8 @@ PRODUCT_PACKAGES += DeviceSettings
 # http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-filter=balanced \
+	dalvik.vm.dex2oat-swap=false \
 	dalvik.vm.image-dex2oat-filter=speed
-
 
 # Set releasetype to snapshot
 PRODUCT_PROPERTY_OVERRIDES += ro.ap.releasetype=SNAPSHOT
