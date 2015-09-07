@@ -13,11 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ifneq ($(filter aceopt,$(TARGET_DEVICE)),)
-PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay_variant
-else
+
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
-endif
 
 COMMON_PATH := device/htc/msm7x30-common
 
