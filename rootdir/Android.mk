@@ -20,11 +20,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := init.htc7x30.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-ifneq ($(filter aceopt,$(TARGET_DEVICE)),)
-LOCAL_SRC_FILES    := init_variant.htc7x30.rc
-else
 LOCAL_SRC_FILES    := init.htc7x30.rc
-endif
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
