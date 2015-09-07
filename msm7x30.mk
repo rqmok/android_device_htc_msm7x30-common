@@ -29,7 +29,6 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 
 # Ramdisk files
 PRODUCT_PACKAGES += \
-	fstab.htc7x30 \
 	init.htc7x30.rc \
 	init.htc7x30.usb.rc \
 	ueventd.htc7x30.rc
