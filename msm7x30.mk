@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += LiveWallpapersPicker
 # DeviceSettings
 PRODUCT_PACKAGES += DeviceSettings
 
-ifeq ($(filter aceopt,$(TARGET_DEVICE)),)
+ifeq ($(filter aceopt sagaopt,$(TARGET_DEVICE)),)
 # Use ART small mode
 # http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
 PRODUCT_PROPERTY_OVERRIDES += \

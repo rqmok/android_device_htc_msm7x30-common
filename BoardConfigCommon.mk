@@ -136,7 +136,7 @@ TARGET_RECOVERY_DEVICE_DIRS += device/htc/msm7x30-common
 #    vold.te \
 #    wpa.te
 
-ifneq ($(filter aceopt,$(TARGET_DEVICE)),)
+ifneq ($(filter aceopt sagaopt,$(TARGET_DEVICE)),)
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
 ifeq ($(WITH_DEXPREOPT),)
