@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	$(COMMON_PATH)/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
 	$(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
@@ -103,6 +103,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += qcmediaplayer
 
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes
+
 # Misc
 PRODUCT_PACKAGES += com.android.future.usb.accessory
 
@@ -114,14 +119,6 @@ PRODUCT_PACKAGES += LiveWallpapersPicker
 
 # DeviceSettings
 PRODUCT_PACKAGES += DeviceSettings
-
-ifeq ($(filter aceopt,$(TARGET_DEVICE)),)
-# Use ART small mode
-# http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-filter=interpret-only \
-	dalvik.vm.image-dex2oat-filter=speed
-endif
 
 # No watchdog for dex2oat
 PRODUCT_PROPERTY_OVERRIDES += \
