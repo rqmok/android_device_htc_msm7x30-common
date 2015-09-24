@@ -72,22 +72,25 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler \
 	libaudioparameter
 
-
-# Video
+# Graphics
 PRODUCT_PACKAGES += \
-	copybit.msm7x30 \
-	gralloc.msm7x30 \
-	hwcomposer.msm7x30  \
-	memtrack.msm7x30
+    copybit.msm7x30 \
+    gralloc.msm7x30 \
+    hwcomposer.msm7x30 \
+    memtrack.msm7x30 \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libqdutils \
+    libtilerenderer
 
-# Media
+# QCOM OMX
 PRODUCT_PACKAGES += \
-	libOmxCore \
-	libOmxVdec \
-	libOmxVenc \
-	libc2dcolorconvert \
-	libdashplayer \
-	libstagefrighthw
+    libstagefrighthw \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libc2dcolorconvert
 
 PRODUCT_PACKAGES += qcmediaplayer
 
