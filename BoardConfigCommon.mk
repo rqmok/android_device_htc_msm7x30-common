@@ -114,7 +114,7 @@ BOARD_USES_LEGACY_MMAP := true
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x30
 
 # CM Hardware tunables
-BOARD_HARDWARE_CLASS := device/semc/msm7x30-common/cmhw
+BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
 # Dexpreopt
 ifeq ($(USE_DEXPREOPT),true)
