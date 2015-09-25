@@ -32,6 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=0 \
 	ro.telephony.ril.v3=signalstrength \
+	ro.telephony.call_ring.multiple=false \
 	mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2 \
 	ro.use_data_netmgrd=true
 
@@ -43,12 +44,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
-    debug.sf.hw=1 \
-    debug.composition.type=mdp \
-    persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.maxlayer=3 \
-    debug.mdpcomp.idletime=-1
+	ro.opengles.version=131072 \
+	debug.sf.hw=1 \
+	debug.composition.type=mdp \
+	persist.hwc.mdpcomp.enable=true \
+	debug.mdpcomp.maxlayer=3 \
+	debug.mdpcomp.idletime=-1
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
