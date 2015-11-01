@@ -46,7 +46,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072 \
 	debug.sf.hw=1 \
-	debug.composition.type=dyn
+	debug.composition.type=mdp \
+	persist.hwc.mdpcomp.enable=true \
+	debug.mdpcomp.maxlayer=3 \
+	debug.mdpcomp.idletime=-1
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
