@@ -27,7 +27,6 @@
 #include <hardware/power.h>
 
 #define SCALING_GOVERNOR_PATH "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
-#define BOOSTPULSE_ONDEMAND "/sys/devices/system/cpu/cpufreq/ondemand/boostpulse"
 #define BOOSTPULSE_INTERACTIVE "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
 #define BOOSTPULSE_INTELLIACTIVE "/sys/devices/system/cpu/cpufreq/intelliactive/boostpulse"
 #define BOOSTPULSE_SMARTASS2 "/sys/devices/system/cpu/cpufreq/smartassV2/boost_pulse"
@@ -116,15 +115,7 @@ static void configure_governor()
 {
     cm_power_set_interactive(NULL, 1);
 
-    if (strncmp(governor, "ondemand", 8) == 0) {
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/up_threshold", "90");
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/io_is_busy", "1");
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor", "2");
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/down_differential", "10");
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/boostfreq", "1200000");
-        sysfs_write("/sys/devices/system/cpu/cpufreq/ondemand/sampling_rate", "50000");
-
-    } else if (strncmp(governor, "interactive", 11) == 0) {
+    if (strncmp(governor, "interactive", 11) == 0) {
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/min_sample_time", "40000");
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/io_is_busy", "1");
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load", "90");
@@ -153,9 +144,7 @@ static int boostpulse_open(struct cm_power_module *cm)
             ALOGE("Can't read scaling governor.");
             cm->boostpulse_warned = 1;
         } else {
-            if (strncmp(governor, "ondemand", 8) == 0)
-                cm->boostpulse_fd = open(BOOSTPULSE_ONDEMAND, O_WRONLY);
-            else if (strncmp(governor, "interactive", 11) == 0)
+            if (strncmp(governor, "interactive", 11) == 0)
                 cm->boostpulse_fd = open(BOOSTPULSE_INTERACTIVE, O_WRONLY);
             else if (strncmp(governor, "intelliactive", 13) == 0)
                 cm->boostpulse_fd = open(BOOSTPULSE_INTELLIACTIVE, O_WRONLY);
