@@ -59,10 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.sys.usb.default.config=mtp
 
-# Enable USB OTG interface
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=true
-
 # Memory
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.low_ram=true \
