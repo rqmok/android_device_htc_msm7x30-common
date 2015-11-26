@@ -11,6 +11,9 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
+    # By default, primary storage is physical
+    setprop ro.vold.primary_physical 1
+
 on fs
     mount_all /fstab.qcom
     swapon_all /fstab.qcom
