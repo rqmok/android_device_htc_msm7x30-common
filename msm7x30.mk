@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstlport
 
+# Camera compat symbols
+PRODUCT_PACKAGES += \
+    libshim_camera
+
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm7x30 \
