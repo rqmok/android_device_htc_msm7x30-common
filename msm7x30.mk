@@ -24,8 +24,6 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 # System Properties
 -include $(COMMON_PATH)/system_prop.mk
 
-PRODUCT_BOOT_JARS += qcmediaplayer
-
 # Ramdisk files
 PRODUCT_PACKAGES += \
 	fstab.qcom \
@@ -94,8 +92,6 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libc2dcolorconvert
-
-PRODUCT_PACKAGES += qcmediaplayer
 
 # Wifi
 PRODUCT_PACKAGES += \
