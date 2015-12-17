@@ -65,6 +65,8 @@ PRODUCT_PACKAGES += camera.msm7x30
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
     audio.primary.msm7x30 \
     libaudio-resampler \
     libaudioparameter
@@ -117,9 +119,6 @@ PRODUCT_PACKAGES += librpc
 PRODUCT_PACKAGES += \
 	gps.msm7x30 \
 	power.msm7x30
-
-# Misc
-PRODUCT_PACKAGES += com.android.future.usb.accessory
 
 # DeviceSettings
 PRODUCT_PACKAGES += DeviceSettings
