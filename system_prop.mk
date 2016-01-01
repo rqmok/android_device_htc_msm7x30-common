@@ -63,10 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.max_starting_bg=8 \
 	config.disable_atlas=true
 
-# USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
-
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.locationfeatures=1 \
