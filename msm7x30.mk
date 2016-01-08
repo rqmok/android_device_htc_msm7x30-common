@@ -75,9 +75,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstlport
 
-# Camera compat symbols
+# Camera
 PRODUCT_PACKAGES += \
-    libshim_camera
+    libshim_camera \
+    Snap
 
 # Graphics
 PRODUCT_PACKAGES += \
