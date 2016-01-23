@@ -60,7 +60,10 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera
-PRODUCT_PACKAGES += camera.msm7x30
+PRODUCT_PACKAGES += \
+	camera.msm7x30 \
+	libshim_camera \
+	Snap
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -74,10 +77,6 @@ PRODUCT_PACKAGES += \
 # Adreno
 PRODUCT_PACKAGES += \
     libstlport
-
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
 
 # Graphics
 PRODUCT_PACKAGES += \
