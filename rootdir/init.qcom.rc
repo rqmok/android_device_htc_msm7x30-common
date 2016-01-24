@@ -14,8 +14,6 @@ on init
     # By default, primary storage is physical
     setprop ro.vold.primary_physical 1
 
-	export LD_PRELOAD /system/lib/libshim_camera.so
-
 on fs
     mount_all /fstab.qcom
     swapon_all /fstab.qcom
