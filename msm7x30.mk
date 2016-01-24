@@ -124,8 +124,7 @@ PRODUCT_PACKAGES += \
 # DeviceSettings
 PRODUCT_PACKAGES += DeviceSettings
 
-# Use ART small mode
-# http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
+# ART
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-filter=balanced \
 	dalvik.vm.dex2oat-swap=false \
