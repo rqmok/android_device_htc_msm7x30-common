@@ -13,7 +13,7 @@ on init
 
     # By default, primary storage is physical
     setprop ro.vold.primary_physical 1
-    export LD_SHIM_LIBS "/system/lib/hw/camera.vendor.msm7x30.so|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/lib/hw/camera.vendor.msm7x30.so|libshim_camera.so:/system/lib/hw/camera.vendor.msm7x30.so|libshim_skia.so"
 
 on fs
     mount_all /fstab.qcom
