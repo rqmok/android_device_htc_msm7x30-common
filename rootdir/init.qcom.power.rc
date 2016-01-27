@@ -10,6 +10,13 @@ on boot
     write /sys/block/mmcblk1/queue/read_ahead_kb 4
     write /sys/block/mmcblk1/queue/nr_requests 2048
 
+    # USB host support
+    mkdir /dev/bus 0771 system system
+    mkdir /dev/bus/usb 0771 system system
+
+    chmod 0660 /sys/devices/platform/msm_otg/msm_hsusb/gadget/lun1/file
+    chown usb usb /sys/devices/platform/msm_otg/msm_hsusb/gadget/lun1/file
+
     # Flash storage isn't a good entropy source, and only causes locking
     # overhead in the kernel. Turn it off.
     write /sys/block/mmcblk0/queue/add_random 0
