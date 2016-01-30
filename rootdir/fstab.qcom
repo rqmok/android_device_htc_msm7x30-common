@@ -12,7 +12,7 @@
 /dev/block/platform/msm_sdcc.2/by-name/cache        /cache      ext4    rw,noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,errors=panic     wait,check,formattable
 
 /devices/platform/msm_sdcc.4/mmc_host/mmc2*         auto        auto    defaults        voldmanaged=sdcard0:auto,encryptable=userdata,noemulatedsd
-#/devices/platform/msm_hsusb_host.0*                 auto        auto    defaults        voldmanaged=usb:auto
+/devices/platform/msm_otg/msm_hsusb_host.0*         auto        auto    defaults        voldmanaged=usb:auto
 
 # zram
 #/dev/block/zram0                                    none        swap    defaults        zramsize=134217728,notrim
