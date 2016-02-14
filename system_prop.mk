@@ -69,9 +69,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.google.locationfeatures=1 \
-	ro.product.locale.language=en \
-	ro.product.locale.region=US
+	ro.com.google.locationfeatures=1
 
 # Disable strict mode
 PRODUCT_PROPERTY_OVERRIDES += \
