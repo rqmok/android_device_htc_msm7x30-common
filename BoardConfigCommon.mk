@@ -37,9 +37,6 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_PROVIDES_LIBLIGHT := true
 
-# SELinux
--include device/qcom/sepolicy/sepolicy.mk
-
 # Build EXT4 and F2FS tools
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -114,6 +111,10 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x30
 
 # CM Hardware tunables
 BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
+
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/htc/msm7x30-common/sepolicy
 
 # Dexpreopt
 ifeq ($(USE_DEXPREOPT),true)
