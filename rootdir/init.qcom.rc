@@ -77,6 +77,10 @@ on boot
     # Display color calibration
     chown system system /sys/class/graphics/fb0/kcal
 
+    # PowerHAL permissions
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+
     # Allow system to have access to /dev/tun directory
     mkdir /dev/tun 0770 system vpn
     chown system vpn /dev/tun
