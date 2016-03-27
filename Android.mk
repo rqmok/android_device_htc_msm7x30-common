@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),primou)
+ifeq ($(TARGET_DEVICE),vivo)
     include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
