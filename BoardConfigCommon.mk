@@ -99,6 +99,8 @@ EXTENDED_FONT_FOOTPRINT := true
 
 BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
 
+BLOCK_BASED_OTA := false
+
 # Use dlmalloc instead of jemalloc because it's
 # supposedly better in single-threaded applications
 # http://blog.poweredbytoast.com/memory-allocators
