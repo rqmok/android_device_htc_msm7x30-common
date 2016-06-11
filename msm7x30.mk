@@ -46,8 +46,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml
 
 # Media config files
 PRODUCT_COPY_FILES += \
@@ -68,8 +67,6 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
     audio.primary.msm7x30 \
     libaudio-resampler \
     libaudioparameter
@@ -127,10 +124,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-filter=balanced \
 	dalvik.vm.dex2oat-swap=false \
 	dalvik.vm.image-dex2oat-filter=speed
-
-# Set releasetype to snapshot
-PRODUCT_PROPERTY_OVERRIDES += ro.ap.releasetype=SNAPSHOT
-
 
 # Proprietary vendor tree
 $(call inherit-product, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)

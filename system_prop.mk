@@ -19,8 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ril.enable.a53=1 \
 	ro.ril.disable.fd.plmn.prefix=23402,23410,23411 \
 	ro.ril.enable.sdr=1 \
-	ro.ril.enable.amr.wideband=1 \
-	ro.ril.enable.dtm=1 \
+	ro.ril.enable.amr.wideband=0 \
+	ro.ril.enable.dtm=0 \
 	ro.ril.gprsclass=12 \
 	ro.ril.hsdpa.category=10 \
 	ro.ril.hsupa.category=6 \
@@ -31,8 +31,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=0 \
-	ro.telephony.ril.v3=signalstrength \
-	ro.telephony.call_ring.multiple=false \
 	mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2 \
 	ro.use_data_netmgrd=true
 
@@ -50,9 +48,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.mdpcomp.maxlayer=3 \
 	debug.mdpcomp.idletime=-1
 
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.media.use-awesome=true
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
 	camera2.portability.force_api=1
+
+# UMS
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.vold.umsdirtyratio=20
 
 # Memory
 PRODUCT_PROPERTY_OVERRIDES += \
