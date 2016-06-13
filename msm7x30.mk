@@ -26,7 +26,6 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # Ramdisk files
 PRODUCT_PACKAGES += \
-	fstab.qcom \
 	init.qcom.rc \
 	init.qcom.power.rc \
 	init.qcom.usb.rc \
