@@ -118,13 +118,3 @@ BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 -include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += device/htc/msm7x30-common/sepolicy
 
-# Dexpreopt
-ifeq ($(USE_DEXPREOPT),true)
-    # Enable dex-preoptimization to speed up first boot sequence
-    ifeq ($(HOST_OS),linux)
-        ifeq ($(WITH_DEXPREOPT),)
-            WITH_DEXPREOPT := true
-            WITH_DEXPREOPT_COMP := true
-        endif
-    endif
-endif
