@@ -116,5 +116,4 @@ BOARD_HARDWARE_CLASS := device/htc/msm7x30-common/cmhw
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/htc/msm7x30-common/sepolicy
 
